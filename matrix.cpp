@@ -35,8 +35,8 @@ template<typename T> T     midof(T a, T b, T c) { return maxof(minof(a, b), mino
 int main()
 {   
 
-    input;
-    output;
+    // input;
+    // output;
     fast;
     
     /*  ∧,,,∧
@@ -45,24 +45,26 @@ int main()
        |   code from here </>|   
       ￣￣￣￣￣￣￣￣￣￣￣￣ */
     int n[5][5];
-    int i, j;
+    int i, j, count=0;
+    int row=0, col=0;
     
     for(i=0; i<5; i++) {
         for(j=0; j<5; j++){
             cin>>n[i][j];
-            // cout<<n[i][j];
-
-            if (n[i][j]== 1){
-                    
-                if (i<2) {
-                    i = 2-1;
-                    cout<<i;
-            }
-                }
+            
+             if (n[i][j]== 1){
+                row = i;
+                col = j;
+                break;
+               }
         }
 
     }
+    
+    count += abs(2 - row) + abs(2 - col);
 
+   
+    cout<<count;
     
 
     return 0;
